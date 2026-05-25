@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    background:black;
+    color:white;
+}
+
+/* HERO SECTION */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    overflow:hidden;
+}
+
+/* BACKGROUND */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.08),
+    rgba(0,0,0,0.35)
+    ),
+    url('background.jpg');
+
+    background-size:cover;
+
+    background-position:center center;
+
+    background-repeat:no-repeat;
+
+    filter:
+    brightness(1)
+    contrast(1.08)
+    saturate(1.2);
+
+    transform:scale(1.03);
+
+    animation:bgZoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes bgZoom{
+
+    0%{
+        transform:scale(1.03);
+    }
+
+    100%{
+        transform:scale(1.12);
+    }
+}
+
+/* GOLD LIGHT */
+
+.glow{
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:rgba(255,215,0,0.15);
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    animation:pulse 6s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* FLOWERS */
+
+.flowers span{
+
+    position:absolute;
+
+    top:-100px;
+
+    font-size:28px;
+
+    animation:fall linear infinite;
+
+    z-index:2;
+}
+
+@keyframes fall{
+
+    0%{
+        transform:translateY(-100px) rotate(0deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* COUPLE FRAME */
+
+.couple-frame{
+
+    position:absolute;
+
+    top:20px;
+    right:20px;
+
+    width:250px;
+    height:320px;
+
+    padding:10px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ffd700,
+    #fff5c3,
+    #ffb300
+    );
+
+    border-radius:35px;
+
+    box-shadow:
+    0 0 20px rgba(255,215,0,0.7),
+    0 0 50px rgba(255,215,0,0.35),
+    0 10px 35px rgba(0,0,0,0.45);
+
+    overflow:hidden;
+
+    z-index:10;
+
+    animation:float 5s infinite ease-in-out;
+
+    border:3px solid rgba(255,255,255,0.35);
+}
+
+.couple-frame::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    to bottom right,
+    rgba(255,255,255,0.35),
+    rgba(255,255,255,0.05)
+    );
+
+    z-index:1;
+}
+
+.couple-img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:28px;
+
+    display:block;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* CONTENT */
+
+.content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:100%;
+
+    max-width:900px;
+
+    text-align:center;
+
+    padding:40px;
+
+    background:rgba(255,255,255,0.10);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,215,0,0.25);
+
+    border-radius:35px;
+
+    box-shadow:
+    0px 10px 50px rgba(0,0,0,0.6);
+
+    animation:fadeUp 2s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+
+/* TEXT */
+
+.save-date{
+
+    font-size:22px;
+
+    letter-spacing:6px;
+
+    color:#ffd700;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+}
+
+.main-title{
+
+    font-family:'Cinzel',serif;
+
+    font-size:70px;
+
+    margin-bottom:10px;
+
+    text-shadow:
+    0px 0px 25px rgba(255,215,0,0.7);
+}
+
+.sub-text{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    margin-top:15px;
+}
+
+.names{
+
+    font-family:'Cinzel',serif;
+
+    font-size:42px;
+
+    margin-top:30px;
+
+    line-height:1.8;
+
+    font-weight:700;
+}
+
+.and{
+
+    color:#ffd700;
+
+    font-size:40px;
+}
+
+/* CARD */
+
+.card{
+
+    margin-top:35px;
+
+    padding:35px;
+
+    background:rgba(255,255,255,0.08);
+
+    border-radius:25px;
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:
+    0px 5px 25px rgba(0,0,0,0.5);
+}
+
+.card p{
+
+    font-size:20px;
+
+    line-height:2;
+}
+
+.highlight{
+
+    color:#ffd700;
+
+    font-weight:700;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+}
+
+.time-box{
+
+    width:110px;
+
+    padding:18px;
+
+    background:rgba(255,255,255,0.12);
+
+    border-radius:20px;
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:
+    0px 5px 20px rgba(0,0,0,0.4);
+}
+
+.time-box h2{
+
+    font-size:34px;
+
+    color:#ffd700;
+}
+
+.time-box span{
+
+    font-size:16px;
+}
+
+/* QR */
+
+.qr-section{
+
+    margin-top:40px;
+}
+
+.qr-section img{
+
+    width:200px;
+
+    border-radius:20px;
+
+    border:4px solid white;
+
+    box-shadow:
+    0px 0px 30px rgba(255,255,255,0.5);
+}
+
+.qr-text{
+
+    margin-top:15px;
+
+    font-size:18px;
+}
+
+/* BUTTON */
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:16px 35px;
+
+    background:
+    linear-gradient(
+    45deg,
+    #ffd700,
+    #ff9800
+    );
+
+    color:black;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    font-size:18px;
+
+    transition:0.4s;
+}
+
+.btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0px 0px 25px gold;
+}
+
+/* BLESSING */
+
+.blessing{
+
+    margin-top:35px;
+
+    font-size:22px;
+
+    color:#ffe082;
+}
+
+/* FOOTER */
+
+footer{
+
+    text-align:center;
+
+    padding:20px;
+
+    background:#111;
+
+    font-size:15px;
+
+    color:#bbb;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .main-title{
+        font-size:42px;
+    }
+
+    .names{
+        font-size:28px;
+    }
+
+    .card p{
+        font-size:17px;
+    }
+
+    .content{
+        padding:20px;
+    }
+
+    .couple-frame{
+
+        width:140px;
+        height:180px;
+
+        top:15px;
+        right:15px;
+
+        border-radius:25px;
+    }
+
+    .couple-img{
+        border-radius:20px;
+    }
+
+    .time-box{
+        width:85px;
+    }
+
+    .save-date{
+        font-size:16px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="glow"></div>
+
+<!-- FLOWERS -->
+
+<div class="flowers">
+
+<span style="left:5%;animation-duration:10s;">🌸</span>
+<span style="left:18%;animation-duration:14s;">🌺</span>
+<span style="left:30%;animation-duration:11s;">🌼</span>
+<span style="left:48%;animation-duration:13s;">🌸</span>
+<span style="left:62%;animation-duration:15s;">🌺</span>
+<span style="left:75%;animation-duration:12s;">🌼</span>
+<span style="left:90%;animation-duration:16s;">🌸</span>
+
+</div>
+
+<!-- COUPLE IMAGE -->
+
+<div class="couple-frame">
+
+<img src="couple.png" class="couple-img">
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="content">
+
+<div class="save-date">
+
+SAVE THE DATE
+
+</div>
+
+<h1 class="main-title">
+
+Wedding Invitation
+
+</h1>
+
+<p class="sub-text">
+
+With the blessings of our parents and elders,
+we cordially invite you and your family
+for the wedding celebration of
+
+</p>
+
+<div class="names">
+
+M. Janarthanan
+
+<div class="and">&</div>
+
+N. Hemavathi
+
+</div>
+
+<!-- DETAILS -->
+
+<div class="card">
+
+<p>
+
+<span class="highlight">
+
+Wedding Date:
+
+</span>
+
+Thursday, 04 June 2026
+
+</p>
+
+<p>
+
+<span class="highlight">
+
+Muhurtham Time:
+
+</span>
+
+7:30 AM – 9:00 AM
+
+</p>
+
+<p>
+
+<span class="highlight">
+
+Wedding Venue:
+
+</span>
+
+</p>
+
+<p>Munishwarar Temple</p>
+
+<p>Vembi, Ranipet</p>
+
+<br>
+
+<p>
+
+<span class="highlight">
+
+Reception Time:
+
+</span>
+
+7:30 PM – 9:00 PM
+
+</p>
+
+<p>
+
+<span class="highlight">
+
+Reception Venue:
+
+</span>
+
+</p>
+
+<p>ANS Mahal</p>
+
+<p>Kalavai, Ranipet</p>
+
+</div>
+
+<!-- COUNTDOWN -->
+
+<div class="countdown">
+
+<div class="time-box">
+<h2 id="days">00</h2>
+<span>Days</span>
+</div>
+
+<div class="time-box">
+<h2 id="hours">00</h2>
+<span>Hours</span>
+</div>
+
+<div class="time-box">
+<h2 id="minutes">00</h2>
+<span>Minutes</span>
+</div>
+
+<div class="time-box">
+<h2 id="seconds">00</h2>
+<span>Seconds</span>
+</div>
+
+</div>
+
+<!-- QR -->
+
+<div class="qr-section">
+
+<img src="qr.png">
+
+<div class="qr-text">
+
+Scan QR Code for Marriage Hall Location
+
+</div>
+
+</div>
+
+<!-- BUTTON -->
+
+<a href="https://share.google/jVZB77r88vDZyrlUe" class="btn">
+
+Open Location
+
+</a>
+
+<!-- BLESSING -->
+
+<div class="blessing">
+
+Your Presence & Blessings Mean Everything To Us ❤
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+Designed with Love for Wedding Celebration
+
+</footer>
+
+<!-- MUSIC -->
+
+<audio autoplay loop>
+
+<source src="music.mp3" type="audio/mp3">
+
+</audio>
+
+<!-- COUNTDOWN -->
+
+<script>
+
+const weddingDate =
+new Date("June 4, 2026 07:30:00").getTime();
+
+setInterval(function(){
+
+const now = new Date().getTime();
+
+const distance = weddingDate - now;
+
+const days =
+Math.floor(distance / (1000 * 60 * 60 * 24));
+
+const hours =
+Math.floor((distance % (1000 * 60 * 60 * 24))
+/ (1000 * 60 * 60));
+
+const minutes =
+Math.floor((distance % (1000 * 60 * 60))
+/ (1000 * 60));
+
+const seconds =
+Math.floor((distance % (1000 * 60))
+/ 1000);
+
+document.getElementById("days").innerHTML = days;
+
+document.getElementById("hours").innerHTML = hours;
+
+document.getElementById("minutes").innerHTML = minutes;
+
+document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+</script>
+
+</body>
+
+</html>
