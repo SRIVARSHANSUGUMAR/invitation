@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Wedding Invitation</title>
@@ -42,8 +41,8 @@ body::before{
 
     background:
     linear-gradient(
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0.45)
+    rgba(0,0,0,0.05),
+    rgba(0,0,0,0.20)
     ),
     url('background.jpg');
 
@@ -58,7 +57,7 @@ body::before{
     animation:bgZoom 25s infinite alternate ease-in-out;
 
     filter:
-    brightness(1)
+    brightness(1.05)
     contrast(1.08)
     saturate(1.15);
 }
@@ -70,11 +69,11 @@ body::before{
     }
 
     100%{
-        transform:scale(1.08);
+        transform:scale(1.06);
     }
 }
 
-/* GOLD OVERLAY */
+/* LIGHT GOLD GLOW */
 
 body::after{
 
@@ -88,7 +87,7 @@ body::after{
     top:20%;
     left:30%;
 
-    background:rgba(255,215,0,0.12);
+    background:rgba(255,215,0,0.08);
 
     border-radius:50%;
 
@@ -96,7 +95,7 @@ body::after{
 
     z-index:-1;
 
-    animation:pulse 7s infinite;
+    animation:pulse 8s infinite;
 }
 
 @keyframes pulse{
@@ -106,7 +105,7 @@ body::after{
     }
 
     50%{
-        transform:scale(1.15);
+        transform:scale(1.12);
     }
 
     100%{
@@ -114,7 +113,7 @@ body::after{
     }
 }
 
-/* MAIN SECTION */
+/* HERO SECTION */
 
 .hero{
 
@@ -159,7 +158,7 @@ body::after{
     }
 }
 
-/* GLASS CARD */
+/* MAIN CONTENT */
 
 .content{
 
@@ -174,16 +173,16 @@ body::after{
 
     padding:45px 35px;
 
-    background:rgba(255,255,255,0.10);
+    background:rgba(255,255,255,0.04);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:blur(5px);
 
-    border:1px solid rgba(255,215,0,0.25);
+    border:1px solid rgba(255,255,255,0.10);
 
     border-radius:35px;
 
     box-shadow:
-    0 10px 50px rgba(0,0,0,0.6);
+    0 10px 40px rgba(0,0,0,0.35);
 
     animation:fadeUp 2s ease;
 }
@@ -227,10 +226,10 @@ body::after{
     margin-bottom:15px;
 
     text-shadow:
-    0 0 25px rgba(255,215,0,0.7);
+    0 0 20px rgba(255,215,0,0.6);
 }
 
-/* SUBTEXT */
+/* SUB TEXT */
 
 .sub-text{
 
@@ -261,7 +260,7 @@ body::after{
     font-size:42px;
 }
 
-/* IMAGE SECTION */
+/* COUPLE IMAGES */
 
 .couple-container{
 
@@ -276,34 +275,34 @@ body::after{
     margin-top:45px;
 }
 
-/* IMAGE FRAME */
+/* FRAME */
 
 .couple-frame{
 
     width:250px;
     height:320px;
 
-    padding:10px;
+    padding:8px;
 
     background:
     linear-gradient(
     135deg,
-    #ffd700,
-    #fff5c4,
-    #ffb300
+    rgba(255,215,0,0.9),
+    rgba(255,245,196,0.9),
+    rgba(255,179,0,0.9)
     );
 
     border-radius:35px;
 
     box-shadow:
-    0 0 25px rgba(255,215,0,0.6),
-    0 10px 35px rgba(0,0,0,0.45);
+    0 0 20px rgba(255,215,0,0.4),
+    0 8px 25px rgba(0,0,0,0.35);
 
     overflow:hidden;
 
     animation:float 5s infinite ease-in-out;
 
-    border:3px solid rgba(255,255,255,0.3);
+    border:2px solid rgba(255,255,255,0.2);
 }
 
 .couple-frame:nth-child(2){
@@ -328,7 +327,7 @@ body::after{
     }
 
     50%{
-        transform:translateY(-12px);
+        transform:translateY(-10px);
     }
 
     100%{
@@ -354,7 +353,7 @@ body::after{
     );
 }
 
-/* DETAILS */
+/* DETAILS CARD */
 
 .card{
 
@@ -362,14 +361,16 @@ body::after{
 
     padding:35px;
 
-    background:rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.03);
 
     border-radius:25px;
 
-    backdrop-filter:blur(8px);
+    backdrop-filter:blur(4px);
+
+    border:1px solid rgba(255,255,255,0.08);
 
     box-shadow:
-    0 5px 25px rgba(0,0,0,0.5);
+    0 5px 25px rgba(0,0,0,0.25);
 }
 
 .card p{
@@ -418,14 +419,13 @@ body::after{
 
     padding:18px;
 
-    background:rgba(255,255,255,0.12);
+    background:rgba(255,255,255,0.04);
 
     border-radius:20px;
 
-    backdrop-filter:blur(8px);
+    backdrop-filter:blur(4px);
 
-    box-shadow:
-    0 5px 20px rgba(0,0,0,0.4);
+    border:1px solid rgba(255,255,255,0.08);
 }
 
 .time-box h2{
@@ -453,10 +453,10 @@ body::after{
 
     border-radius:20px;
 
-    border:4px solid white;
+    border:3px solid rgba(255,255,255,0.8);
 
     box-shadow:
-    0 0 30px rgba(255,255,255,0.5);
+    0 0 20px rgba(255,255,255,0.3);
 }
 
 .qr-text{
@@ -498,10 +498,10 @@ body::after{
 
 .btn:hover{
 
-    transform:scale(1.08);
+    transform:scale(1.06);
 
     box-shadow:
-    0 0 25px gold;
+    0 0 20px gold;
 }
 
 /* BLESSING */
@@ -525,11 +525,11 @@ footer{
 
     padding:20px;
 
-    background:#111;
+    background:rgba(0,0,0,0.6);
 
     font-size:15px;
 
-    color:#bbb;
+    color:#ddd;
 }
 
 /* MOBILE */
@@ -658,11 +658,11 @@ N. Hemavathi
 <div class="parents">
 
 <p>
-Son of Mr.Manickam
+Son of Mr.C.Murugesan
 </p>
-
+<p>&</p>
 <p>
-Daughter of Mr.Nagaraj
+Daughter of Mr.A.P.Nagaraj
 </p>
 
 </div>
